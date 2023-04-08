@@ -1,10 +1,18 @@
 extends Node
 
 
-var SpawnGrid = Array(Array())
+var width: int = 30
+var height: int = 9
+var SpawnMap = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var temp: Array = []
+	for n in range(width):
+		temp.append(false)
+	for n in range(height):
+		SpawnMap.append(temp)
+	print(SpawnMap)
 	$GameStartDelay.start()
 	pass # Replace with function body.
 
