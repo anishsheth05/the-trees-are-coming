@@ -6,7 +6,7 @@ func _ready():
 	$AnimatedSprite.playing = true
 	$AnimatedSprite.animation = "move"
 	screen_size = get_viewport_rect().size
-	velocity = get_parent().get_parent().get_parent().get_node("Player").position - get_position()
+	velocity = get_parent().get_parent().get_parent().get_node("Player").position - (get_position() + get_parent().get_position()	)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

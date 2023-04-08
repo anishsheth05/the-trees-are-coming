@@ -1,10 +1,15 @@
 extends Node2D
 
-
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	
+	var num = OS.get_ticks_msec()%3
+	if num == 2:
+		num = 5
+	$Sprite.frame = num
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

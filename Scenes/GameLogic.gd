@@ -1,5 +1,7 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
 var width: int = 30
 var height: int = 9
 var SpawnMap = []
@@ -17,8 +19,11 @@ func _ready():
 
 func spawn_tree(not_here: Array):
 	var tree = load('res://Scenes/Tree.tscn').instance()
-	tree.position = Vector2(40,50)
-	
+	var row = rng.randi_range(0,8)
+	var column = rng.randi_range(0,29)
+	tree.position = Vector2(column*16,16+row*32)
+	not_here[row][column] = true
+	print(not_here)
 	add_child(tree)
 	
 
