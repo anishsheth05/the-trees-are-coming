@@ -21,11 +21,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
+	position.x = clamp(position.x, 8, screen_size.x-8)
 	position.y = clamp(position.y, 16, screen_size.y-16)
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "run"
-		$AnimatedSprite.flip_v = false
 		# See the note below about boolean assignment.
 		$AnimatedSprite.flip_h = velocity.x < 0
 	elif velocity.y != 0:
