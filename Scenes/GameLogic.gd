@@ -30,5 +30,6 @@ func _process(_delta):
 			pass
 
 func spawn_away(not_here: Array):
+	var tree = 10
 	pass
 	
