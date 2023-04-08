@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Resources/Tiles/GameTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_2).png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Lumberjack things/Attack/image2x1.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/DeathScreen.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Score Counter.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/GameLogic.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -93,7 +94,17 @@ script = ExtResource( 15 )
 wait_time = 5.0
 one_shot = true
 
+[node name="Score Counter" type="RichTextLabel" parent="."]
+margin_left = 216.0
+margin_top = 16.0
+margin_right = 296.0
+margin_bottom = 32.0
+text = "Score: 0"
+script = ExtResource( 16 )
+
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
 [connection signal="hit" from="Player" to="DeathScreen" method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="Score Counter" method="_on_Player_hit"]
 [connection signal="timeout" from="GameLogic/TreeSpawnTimer" to="GameLogic" method="_on_TreeSpawnTimer_timeout"]
+[connection signal="timeout" from="GameLogic/TreeSpawnTimer" to="Score Counter" method="_on_TreeSpawnTimer_timeout"]
 [connection signal="timeout" from="GameLogic/GameStartDelay" to="GameLogic" method="_on_GameStartDelay_timeout"]
