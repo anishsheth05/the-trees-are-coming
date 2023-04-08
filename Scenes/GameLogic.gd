@@ -28,3 +28,7 @@ func _process(_delta):
 			$TreeSpawnTimer.start(5)
 		elif true:
 			pass
+
+func spawn_away(not_here: Array):
+	
+	
