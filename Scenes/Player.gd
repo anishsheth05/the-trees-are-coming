@@ -4,7 +4,6 @@ export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 func _ready():
 	screen_size = get_viewport_rect().size
-	position = get_child(2).get_position()
 	
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
