@@ -1,11 +1,10 @@
-extends Node2D
+extends Timer
 
 
-var width = 30
-var height = 9
-var temp = false
-for i in range(width):
-	
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
