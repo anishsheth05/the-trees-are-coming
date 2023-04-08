@@ -1,5 +1,5 @@
-extends Area2D
-signal hit
+extends Node2D
+
 export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 func _ready():
@@ -15,8 +15,7 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-	if Input.is_action_pressed("attack"):
-		$AnimatedSprite.animation = "attack"
+
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
@@ -33,4 +32,3 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
-	
