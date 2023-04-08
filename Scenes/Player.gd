@@ -22,14 +22,13 @@ func _process(delta):
 		$AnimatedSprite.stop()
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 16, screen_size.y-16)
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "run"
 		$AnimatedSprite.flip_v = false
 		# See the note below about boolean assignment.
 		$AnimatedSprite.flip_h = velocity.x < 0
 	elif velocity.y != 0:
-		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 	if Input.is_action_pressed("attack"):
 		$AnimatedSprite.animation = "attack"
