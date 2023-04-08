@@ -5,6 +5,8 @@ var rng = RandomNumberGenerator.new()
 var width: int = 30
 var height: int = 9
 var SpawnMap = []
+var spawntime = 4
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,10 +30,11 @@ func spawn_tree(not_here: Array):
 	add_child(tree)
 	
 
-
 func _on_GameStartDelay_timeout():
 	spawn_tree(SpawnMap)
-	$TreeSpawnTimer.start()
+	if spawntime > 2.5:
+		spawntime -= 0.1
+	$TreeSpawnTimer.start(spawntime)
 
 
 func _on_TreeSpawnTimer_timeout():
