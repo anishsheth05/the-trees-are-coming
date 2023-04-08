@@ -7,7 +7,7 @@ func _ready():
 	$AnimatedSprite.animation = "move"
 	screen_size = get_viewport_rect().size
 	velocity = global_position.direction_to(get_parent().get_parent().get_parent().get_node("Player").position)
-
+	self.rotation_degrees = rad2deg(velocity.angle()) + 90
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 	
