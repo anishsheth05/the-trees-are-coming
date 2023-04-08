@@ -1,12 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://fantasy_ [version 2.0]/forest_/forest_.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Tiles/GameTiles.tres" type="TileSet" id=1]
 
 [node name="World" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 174.977, 88.1667 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 16, 16, 16, 16 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
