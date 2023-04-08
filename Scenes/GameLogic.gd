@@ -30,5 +30,5 @@ func _process(_delta):
 			pass
 
 func spawn_away(not_here: Array):
-	
+	pass
 	

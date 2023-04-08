@@ -12,7 +12,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 150.0
+radius = 5.0
 
 [node name="Mob" type="RigidBody2D"]
 position = Vector2( 176, 43 )
