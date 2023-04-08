@@ -14,26 +14,25 @@ func _ready():
 		temp.append(false)
 	for n in range(height):
 		SpawnMap.append(temp)
-	print('spawning soon')
 
 
 func spawn_tree(not_here: Array):
 	var tree = load('res://Scenes/Tree.tscn').instance()
 	var row = rng.randi_range(0,8)
 	var column = rng.randi_range(0,29)
-	tree.position = Vector2(column*16,16+row*32)
+	while not_here[row][column] == true:
+		row = rng.randi_range(0,8)
+		column = rng.randi_range(0,29)
 	not_here[row][column] = true
-	print(not_here)
+	tree.position = Vector2(column*16,16+row*32)
 	add_child(tree)
 	
 
 
 func _on_GameStartDelay_timeout():
-	print('first spawn')
 	spawn_tree(SpawnMap)
 	$TreeSpawnTimer.start()
 
 
 func _on_TreeSpawnTimer_timeout():
-	print("another spawn")
 	spawn_tree(SpawnMap)
