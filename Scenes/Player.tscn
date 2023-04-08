@@ -12,7 +12,7 @@
 [ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_5).png" type="Texture" id=10]
 [ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_3).png" type="Texture" id=11]
 [ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_2).png" type="Texture" id=12]
-[ext_resource path="res://Scenes/Player.gd" type="Script" id=13]
+[ext_resource path="res://Player.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
