@@ -1,7 +1,35 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Resources/Tiles/GameTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_2).png" type="Texture" id=2]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_1).png" type="Texture" id=3]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_0).png" type="Texture" id=4]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_3).png" type="Texture" id=5]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_3).png" type="Texture" id=6]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_0).png" type="Texture" id=7]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_2).png" type="Texture" id=8]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_4).png" type="Texture" id=9]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_1).png" type="Texture" id=10]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_5).png" type="Texture" id=11]
+[ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_4).png" type="Texture" id=12]
+[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_5).png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5, 15.5 )
 
 [node name="World" type="Node2D"]
 
@@ -11,4 +39,17 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 131079, 1, 0, 131080, 1, 0, 196617, 1, 0, 196618, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 327690, 1, 0, 327691, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 1, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 393225, 1, 0, 393227, 1, 0, 393231, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393244, 1, 0, 458760, 1, 0, 458763, 1, 0, 458766, 1, 0, 458778, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 524295, 1, 0, 524299, 1, 0, 524302, 1, 0, 524316, 1, 0, 524317, 1, 0, 524318, 1, 0, 589830, 1, 0, 589836, 1, 0, 589837, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 655364, 1, 0, 655365, 1, 0, 655373, 1, 0, 655384, 1, 0, 655385, 1, 0, 655390, 1, 0, 655391, 1, 0, 720899, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720921, 1, 0, 720926, 1, 0, 720927, 1, 0, 851963, 1, 0, 851964, 1, 0, 851965, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 786456, 1, 0, 786457, 1, 0, 786462, 1, 0, 917495, 1, 0, 917496, 1, 0, 917497, 1, 0, 917498, 1, 0, 851968, 1, 0, 851979, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 851998, 1, 0, 851999, 1, 0, 852000, 1, 0, 852001, 1, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 852007, 1, 0, 852008, 1, 0, 983031, 1, 0, 983032, 1, 0, 983033, 1, 0, 983034, 1, 0, 983035, 1, 0, 983036, 1, 0, 983037, 1, 0, 983038, 1, 0, 983039, 1, 0, 917514, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 917535, 1, 0, 917536, 1, 0, 917537, 1, 0, 917538, 1, 0, 917539, 1, 0, 917540, 1, 0, 917541, 1, 0, 917542, 1, 0, 917543, 1, 0, 917544, 1, 0, 983050, 1, 0, 983057, 1, 0, 983061, 1, 0, 983065, 1, 0, 983068, 1, 0, 983069, 1, 0, 983072, 1, 0, 1048586, 1, 0, 1048593, 1, 0, 1048596, 1, 0, 1048601, 1, 0, 1048604, 1, 0, 1048605, 1, 0, 1048609, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114138, 1, 0, 1114139, 1, 0, 1114140, 1, 0, 1114141, 1, 0, 1114145, 1, 0, 1179656, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179676, 1, 0, 1179678, 1, 0, 1179679, 1, 0, 1179680, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1310740, 1, 0, 1310741, 1, 0, 1310747, 1, 0, 1310749, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1376279, 1, 0, 1376283, 1, 0, 1376285, 1, 0, 1441815, 1, 0, 1441816, 1, 0, 1441817, 1, 0, 1441818, 1, 0, 1441821, 1, 0, 1507353, 1, 0, 1507354, 1, 0, 1507357, 1, 0, 1572891, 1, 0, 1572892, 1, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( 0, 1 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 1 )
+animation = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -2.5, 2.5 )
+shape = SubResource( 2 )
