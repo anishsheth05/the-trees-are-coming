@@ -1,14 +1,18 @@
 extends Node2D
 
 
-var width = 30
-var height = 9
-var temp = false
-for i in range(width):
-	
+var width: int = 30
+var height: int = 9
+var SpawnMap = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var temp: Array = []
+	for n in range(width):
+		temp.append(false)
+	for n in range(height):
+		SpawnMap.append(temp)
 	pass # Replace with function body.
 
 

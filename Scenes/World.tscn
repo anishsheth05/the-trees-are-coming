@@ -78,4 +78,6 @@ wait_time = 3.0
 wait_time = 5.0
 script = ExtResource( 18 )
 
+[node name="Timer" type="Timer" parent="GameLogic"]
+
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
