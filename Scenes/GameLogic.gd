@@ -1,35 +1,34 @@
 extends Node
 
-
 var width: int = 30
 var height: int = 9
 var SpawnMap = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	var temp: Array = []
 	for n in range(width):
 		temp.append(false)
 	for n in range(height):
 		SpawnMap.append(temp)
-	print(SpawnMap)
-	$GameStartDelay.start()
-	pass # Replace with function body.
+	print('spawning soon')
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if $GameStartDelay.time_left > 0:
-		pass
-	else:
-		if $TreeSpawnTimer.time_left == 0:
-			
-			$TreeSpawnTimer.start(5)
-		elif true:
-			pass
-
-func spawn_away(not_here: Array):
-	var tree = 10
-	pass
+func spawn_tree(not_here: Array):
+	var tree = load('res://Scenes/Tree.tscn').instance()
+	tree.position = Vector2(40,50)
 	
+	add_child(tree)
+	
+
+
+func _on_GameStartDelay_timeout():
+	print('first spawn')
+	spawn_tree(SpawnMap)
+	$TreeSpawnTimer.start()
+
+
+func _on_TreeSpawnTimer_timeout():
+	print("another spawn")
+	spawn_tree(SpawnMap)

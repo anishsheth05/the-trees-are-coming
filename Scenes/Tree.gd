@@ -10,3 +10,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func spit():
+	var seeed = load('res://Mob.tscn').instance()
+	seeed.position = Vector2(8,12)
+	add_child(seeed)
+
+func _on_SeedSpitTimer_timeout():
+	spit()

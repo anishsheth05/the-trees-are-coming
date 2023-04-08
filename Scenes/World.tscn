@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Resources/Tiles/GameTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_2).png" type="Texture" id=2]
@@ -14,10 +14,7 @@
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_4).png" type="Texture" id=12]
 [ext_resource path="res://Lumberjack things/Attack/image2x1.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=14]
-[ext_resource path="res://Mob.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Tree.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/GameLogic.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/GameStartDelay.gd" type="Script" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -70,17 +67,16 @@ shape = SubResource( 2 )
 [node name="GameLogic" type="Node" parent="."]
 script = ExtResource( 17 )
 
-[node name="Tree" parent="GameLogic" instance=ExtResource( 16 )]
-
-[node name="Mob" parent="GameLogic/Tree" instance=ExtResource( 15 )]
-
 [node name="TreeSpawnTimer" type="Timer" parent="GameLogic"]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="GameStartDelay" type="Timer" parent="GameLogic"]
 wait_time = 5.0
-script = ExtResource( 18 )
+one_shot = true
+autostart = true
 
 [node name="Timer" type="Timer" parent="GameLogic"]
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[connection signal="timeout" from="GameLogic/TreeSpawnTimer" to="GameLogic" method="_on_TreeSpawnTimer_timeout"]
+[connection signal="timeout" from="GameLogic/GameStartDelay" to="GameLogic" method="_on_GameStartDelay_timeout"]

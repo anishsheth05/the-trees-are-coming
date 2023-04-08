@@ -14,3 +14,9 @@ script = ExtResource( 1 )
 texture = SubResource( 1 )
 centered = false
 hframes = 6
+
+[node name="SeedSpitTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SeedSpitTimer" to="." method="_on_SeedSpitTimer_timeout"]
