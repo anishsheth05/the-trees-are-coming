@@ -17,7 +17,7 @@ func _on_TreeSpawnTimer_timeout():
 
 
 func update_score():
-	text = "Score: " + score
+	text = "Score: " + str(score)
 
 func _on_Player_hit():
 	dead = true
