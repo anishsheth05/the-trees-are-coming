@@ -2,22 +2,22 @@
 
 [ext_resource path="res://Resources/Tiles/GameTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_2).png" type="Texture" id=2]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_1).png" type="Texture" id=3]
+[ext_resource path="res://Lumberjack things/Attack/image3x1.png" type="Texture" id=3]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_0).png" type="Texture" id=4]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_3).png" type="Texture" id=5]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_3).png" type="Texture" id=6]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_0).png" type="Texture" id=7]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_2).png" type="Texture" id=8]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_4).png" type="Texture" id=9]
+[ext_resource path="res://Lumberjack things/Attack/image6x1.png" type="Texture" id=6]
+[ext_resource path="res://Lumberjack things/Attack/image4x1.png" type="Texture" id=7]
+[ext_resource path="res://Lumberjack things/Attack/image5x1.png" type="Texture" id=8]
+[ext_resource path="res://Lumberjack things/Attack/image1x1.png" type="Texture" id=9]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_1).png" type="Texture" id=10]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_5).png" type="Texture" id=11]
 [ext_resource path="res://Lumberjack things/Run/Woodcutter_run (0_4).png" type="Texture" id=12]
-[ext_resource path="res://Lumberjack things/Attack/Woodcutter_attack1 (0_5).png" type="Texture" id=13]
+[ext_resource path="res://Lumberjack things/Attack/image2x1.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Woodcutter_attack1 (0_2).png-0702115b425d5d1118777bf58b63f35b.stex"
+path="res://.import/image1x1.png-4d7170591533999027d8e80ea8068849.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Lumberjack things/Attack/Woodcutter_attack1 (0_2).png"
-dest_files=[ "res://.import/Woodcutter_attack1 (0_2).png-0702115b425d5d1118777bf58b63f35b.stex" ]
+source_file="res://Lumberjack things/Attack/image1x1.png"
+dest_files=[ "res://.import/image1x1.png-4d7170591533999027d8e80ea8068849.stex" ]
 
 [params]
 
